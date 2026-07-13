@@ -14,6 +14,17 @@ class MainApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
+        appBar: AppBar(title: const Text('Flutter Demo')),
+        bottomNavigationBar: NavigationBar(
+          destinations: const [
+            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+            NavigationDestination(
+              icon: Icon(Icons.business),
+              label: 'Business',
+            ),
+            NavigationDestination(icon: Icon(Icons.school), label: 'School'),
+          ],
+        ),
         body: Container(
           // Parent
           child: Align(
@@ -21,50 +32,47 @@ class MainApp extends StatelessWidget {
             // child
             child: Padding(
               padding: EdgeInsets.all(8.0),
-              child: Container(
-                color: Colors.yellow,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  spacing: 10,
-                  children: [
-                    TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Enter your name',
-                      ),
+              child: ListView(
+                children: [
+                  Container(color: Colors.red, width: 100, height: 100),
+                  Icon(Icons.favorite),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Enter your name',
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        // Handle button press
-                      },
-                      child: Text('Submit'),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        // Handle button press
-                      },
-                      child: Text('Submit'),
-                    ),
-                    OutlinedButton(
-                      onPressed: () {
-                        // Handle button press
-                      },
-                      child: Text('Submit'),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        // Handle button press
-                      },
-                      icon: Icon(Icons.send),
-                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle button press
+                    },
+                    child: Text('Submit'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      // Handle button press
+                    },
+                    child: Text('Submit'),
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      // Handle button press
+                    },
+                    child: Text('Submit'),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      // Handle button press
+                    },
+                    icon: Icon(Icons.send),
+                  ),
 
-                    Image.asset(
-                      'assets/images/image1.jpg',
-                      width: 200,
-                      height: 200,
-                    ),
-                  ],
-                ),
+                  Image.asset(
+                    'assets/images/image1.jpg',
+                    width: 200,
+                    height: 200,
+                  ),
+                ],
               ),
             ),
           ),
